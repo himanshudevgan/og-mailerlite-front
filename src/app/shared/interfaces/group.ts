@@ -1,8 +1,8 @@
 export interface Group {
-  
-   
-    groupname: String,
-    mlgid: String,
-    
-    
-  }
+  _id: String;
+  groupname: String;
+  mlgid: String;
+  active: Boolean;
+  createdAt: String;
+  updatedAt: String;
+}

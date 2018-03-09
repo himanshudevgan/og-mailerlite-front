@@ -9,11 +9,9 @@ export class CookieService {
     value = this.encrypt(value);
     const expires = '; expires=' + date.toUTCString();
     document.cookie = name + '=' + value + expires + '; path=/';
-   
   }
 
   read(name: string) {
-  
     const nameEQ = name + '=';
     const ca = document.cookie.split(';');
     for (let i = 0; i < ca.length; i++) {
@@ -31,11 +29,10 @@ export class CookieService {
   delete(name: string) {
     this.create(name, '', -1);
   }
-
-
-     encrypt(text) {
-      return crypto.AES.encrypt(text, environment.SECRET);
-    }
+  
+  encrypt(text) {
+    return crypto.AES.encrypt(text, environment.SECRET);
+  }
 
   decrypt(text) {
     try {

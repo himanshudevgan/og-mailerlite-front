@@ -3,20 +3,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { AppRoutes } from './shared/routes/routes';
-import { GroupsComponent } from './components/groups/groups.component';
-import { CalcComponent } from './components/calc/calc.component';
-import { GroupModule } from './components/groups/groups.module';
-import { LoginComponent } from './components/login/login.component';
-import { BasicService } from './shared/services/basic.service';
-import { BaseService } from './shared/services/base.service';
-import { CookieService } from './shared/services/cookie.service';
+import { AppRoutes, APP_ROUTER_PROVIDERS } from './shared/routes/routes';
+import { MailerliteModule } from './mailerlite/mailerlite.module';
+import { LoginComponent } from './shared/components/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalcComponent,
     LoginComponent
   ],
   imports: [
@@ -25,9 +19,9 @@ import { CookieService } from './shared/services/cookie.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    GroupModule
+    MailerliteModule
   ],
-  providers: [BasicService,BaseService,CookieService],
+  providers: [APP_ROUTER_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

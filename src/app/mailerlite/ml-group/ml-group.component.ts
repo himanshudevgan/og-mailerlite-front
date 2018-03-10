@@ -27,14 +27,16 @@ export class MlGroupComponent implements OnInit {
   }
   getGroup(){
     this.groupService.groups.subscribe(
-      (success) => {
+      (success: any) => {
         if(!success) {
           this.groupService.getGroup().subscribe(
             (groups)=>{
-              this.groups=groups
+              this.groups=groups;
               this.groupService.setGroup(groups);
             }
           );
+        } else {
+          this.groups=success;
         }
       }
     );
@@ -43,7 +45,20 @@ export class MlGroupComponent implements OnInit {
     console.log('edit', id);
   }
   delete(id) {
-    console.log('delete', id);    
+    this.groupService.deleteGroup(id).subscribe(
+      (success)=>{
+        this.groupService.getGroup().subscribe(
+          (groups)=>{
+            this.groups=groups;
+            this.groupService.setGroup(groups);
+          }
+        );
+        console.log("sucess", success);
+        this.getGroup();
+      }, (error)=>{
+        console.log("error", error);
+      }
+    );
   }
   saveGroup() {
     const btnAddGroup = <HTMLInputElement><any>document.querySelector('#btnAddGroup');

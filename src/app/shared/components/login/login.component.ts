@@ -31,11 +31,14 @@ export class LoginComponent implements OnInit {
        },
        (error:any) => {
          this.message = error.message;
+         this.resetForm()
        }
     );
-    
     this.formSubmitted = true;
 
   }
+  resetForm() { 
+    this.formLogin.reset();
+}
  
 }

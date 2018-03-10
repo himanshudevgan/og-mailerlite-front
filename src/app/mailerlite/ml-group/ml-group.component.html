@@ -10,18 +10,13 @@
           <thead>
             <th>Malerlite Group Id </th>
             <th>Group Name</th>
-            <th>Edit</th>
             <th>Delete</th>
           </thead>
           <tbody>
             <tr *ngFor="let group of groups">
               <td>{{group.mlgid}}</td>
               <td>{{group.groupname}}</td>
-              <td>
-                <a href="javascript:void(0)" (click)="edit(group._id)">
-                  <i class="glyphicon glyphicon-edit"></i>
-                </a>
-              </td>
+              
               <td>
                 <a href="javascript:void(0)" (click)="delete(group._id)">
                   <i class="glyphicon glyphicon-trash"></i>

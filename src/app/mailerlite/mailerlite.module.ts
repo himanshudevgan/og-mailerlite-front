@@ -6,6 +6,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MailerliteComponent } from './mailerlite.component';
 import { MlGroupComponent } from './ml-group/ml-group.component';
 import { NavbarComponent } from './../shared/components/navbar/navbar.component';
+import { MlFieldComponent } from './ml-field/ml-field.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +16,8 @@ import { NavbarComponent } from './../shared/components/navbar/navbar.component'
     FormsModule,
     ReactiveFormsModule,
   ],
-  declarations: [MailerliteComponent, MlGroupComponent, NavbarComponent]
+  declarations: [MailerliteComponent, MlGroupComponent, NavbarComponent,
+    MlFieldComponent
+]
 })
 export class MailerliteModule { }
